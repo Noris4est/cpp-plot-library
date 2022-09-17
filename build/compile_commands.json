@@ -1,0 +1,102 @@
+[
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cpp_Plot_LIbrary.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cpp_Plot_LIbrary.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cpp_Plot_LIbrary.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/figure/figure.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/figure/figure.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/figure/figure.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/axesManager/axesManager.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/axesManager/axesManager.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/axesManager/axesManager.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/axobject.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/axobject.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/axobject.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/grid/grid.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/grid/grid.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/grid/grid.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/ticks/ticks.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/ticks/ticks.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/ticks/ticks.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/frametext/frametext.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/frametext/frametext.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/frametext/frametext.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/label/label.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/label/label.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/label/label.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/label/xlabel/xlabel.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/label/xlabel/xlabel.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/label/xlabel/xlabel.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/label/ylabel/ylabel.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/label/ylabel/ylabel.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/label/ylabel/ylabel.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/title/title.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/title/title.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/title/title.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/chart_background/chart_background.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/chart_background/chart_background.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/chart_background/chart_background.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/ax_background/ax_background.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/ax_background/ax_background.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/ax_background/ax_background.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/ax_border/ax_border.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/ax_border/ax_border.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/ax_border/ax_border.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/ax_components/chart_border/chart_border.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/chart_border/chart_border.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/ax_components/chart_border/chart_border.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/frame_border/frame_border.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/frame_border/frame_border.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/frame_border/frame_border.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/figure/fig_background/fig_background.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/figure/fig_background/fig_background.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/figure/fig_background/fig_background.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/figure/fig_title/fig_title.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/figure/fig_title/fig_title.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/figure/fig_title/fig_title.cpp"
+},
+{
+  "directory": "/home/vit/CppProjects/cpp_Plot_LIbrary/build",
+  "command": "/usr/bin/g++   -isystem /home/vit/opencv/install_4_5_2_contrib/include/opencv4  -g   -std=gnu++14 -o CMakeFiles/cpp_Plot_LIbrary.dir/cplotlib/ax/plots/plot/plot.cpp.o -c /home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/plots/plot/plot.cpp",
+  "file": "/home/vit/CppProjects/cpp_Plot_LIbrary/cplotlib/ax/plots/plot/plot.cpp"
+}
+]

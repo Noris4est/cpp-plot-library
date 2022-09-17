@@ -1,0 +1,47 @@
+#include <iostream>
+#include <numeric> // for std::iota
+#include "cplotlib/figure/figure.hpp"
+#include "cplotlib/axesManager/axesManager.hpp"
+#include "cplotlib/ax/ax.hpp"
+
+int main(int argc, char *argv[])
+{
+    int vecSize = 21;
+    std::vector<double> x_vec(vecSize), y_vec(vecSize), y_vec2(vecSize);
+    std::iota(x_vec.begin(), x_vec.end(), -10);
+    float HI = 100, LO = 25;
+    for (int i = 0; i < x_vec.size(); i++)
+    {
+        //y_vec[i] = LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO)));
+        y_vec[i] = x_vec[i]*x_vec[i];
+        y_vec2[i] = x_vec[i]*x_vec[i]*x_vec[i];
+    }
+
+    cplt::Figure fig = cplt::Figure();
+    int nRows = 2, nCols = 2;
+
+    auto axesManager = fig.addSubplots(nRows, nCols);
+    auto ax00 = axesManager->get(0,0);
+    axesManager->get(0,0)->setXlim(-10, 10);
+    axesManager->get(0,0)->setYlim(-100,100);
+
+    axesManager->get(0,0)->setXticks({-10, - 5, 0, 5, 10});
+    axesManager->get(0,0)->setYticks({-50, -30, -10, 0, 70, 100});
+    ax00->setXlabel("X");
+    ax00->setYlabel("Y");
+    ax00->setTitle("New QWERTYqwert123");
+
+    axesManager->get(0,0)->plot(x_vec,y_vec);
+
+
+    cv::namedWindow("figure1");
+    fig.save("../figure1.png");
+    fig.show("figure1");
+
+    axesManager->get(0,0)->setOffsets(0.3, 0.3, 0.3, 0.3);
+    axesManager->get(0,0)->setChartBackgroundColor(colors::fuchsia);
+    fig.show("figure2");
+    int key = cv::waitKey(0);
+    std::cout <<"END main!" << std::endl;
+    return 0;
+} // END main
