@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         y_vec2[i] = x_vec[i]*x_vec[i]*x_vec[i];
     }
 
-    cplt::Figure fig = cplt::Figure();
+    cplt::Figure fig = cplt::Figure(cv::Size(1000,800));
     int nRows = 2, nCols = 2;
 
     auto axesManager = fig.addSubplots(nRows, nCols);
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     fig.show("figure1");
 
     ax00->setOffsets(0.3, 0.3, 0.3, 0.3);
-    ax00->getGrid()->setThickness(3);
+    ax00->getGrid()->setThickness(2);
     fig.show("figure2");
     int key = cv::waitKey(0);
     std::cout <<"END main!" << std::endl;

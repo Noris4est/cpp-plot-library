@@ -16,7 +16,7 @@ namespace ax_components
         genThickness = 1;
         genColor = colors::gray;
         specialThickness = 2;
-        specialColor = colors::blue;
+        specialColor = colors::black;
         visibility = true;
     }
     void Grid::setColor(cv::Scalar color)
@@ -52,17 +52,45 @@ namespace ax_components
         scalling(*xticks, chartXticks, xlim->first, xlim->second, 0, chartFrame.cols-1);
         scalling(*yticks, chartYticks, ylim->first, ylim->second, chartFrame.rows-1, 0); // инверсия
         cv::Point p1, p2;
+        int izerox = -1, izeroy = -1;
+        auto itr = std::find(xticks->begin(), xticks->end(), 0);
+        if(itr != xticks->end())
+        {
+            izerox = itr - xticks->begin();
+            p1 = {chartXticks[izerox], 0};
+            p2 = {chartXticks[izerox], chartFrame.rows};
+            cv::line(chartFrame, p1, p2, this->specialColor, this->specialThickness);
+        }
+
+        itr = std::find(yticks->begin(), yticks->end(), 0);
+        if(itr != yticks->end())
+        {
+            izeroy = itr - yticks->begin();
+            p1 = {0, chartYticks[izeroy]};
+            p2 = {chartFrame.cols, chartYticks[izeroy]};
+            cv::line(chartFrame, p1, p2, this->specialColor, this->specialThickness);
+        }
+
         for (auto xtick : chartXticks)
         {
+            if(izerox != -1 && xtick != chartXticks[izerox])
+            {
                 p1 = {xtick, 0};
                 p2 = {xtick, chartFrame.rows};
                 cv::line(chartFrame, p1, p2, this->genColor, this->genThickness);
+            }
         }
         for (auto ytick : chartYticks)
         {
+            if(izeroy != -1 && ytick != chartYticks[izeroy])
+            {
                 p1 = {0, ytick};
                 p2 = {chartFrame.cols, ytick};
                 cv::line(chartFrame, p1, p2, this->genColor, this->genThickness);
+            }
         }
+
+
+
     }
 }

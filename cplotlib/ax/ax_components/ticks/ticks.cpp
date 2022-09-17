@@ -14,12 +14,12 @@ namespace ax_components
         AxObject(frame, axRect, offsetSettings, xlim, ylim, xticks, yticks)
     {
         visibility = true;
-        fontScale = 0.4;
+        fontScale = 0.6;
         fontColor = colors::black;
         numDigitsAfterDot = 1;
-        int fontFace = cv::FONT_HERSHEY_DUPLEX;//шрифт-тип (cv::FONT_HERSHEY_DUPLEX)
-        int lineType = cv::LINE_AA;//cv::LINE_AA
-        int lineThickness = 1;//thisckness = 1
+        fontFace = cv::FONT_HERSHEY_DUPLEX;//шрифт-тип (cv::FONT_HERSHEY_DUPLEX)
+        lineType = cv::LINE_AA;//cv::LINE_AA
+        lineThickness = 1;//thisckness = 1
     }
     void Ticks::setXticks(const std::vector<double> &xticks)
     {

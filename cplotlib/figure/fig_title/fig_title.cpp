@@ -5,7 +5,7 @@ FigTitle::FigTitle(std::shared_ptr<cv::Mat> frame,
 {
     titleText = "Default title";
     fontColor = colors::black;
-    fontScale = 0.7;
+    fontScale = 1;
     visibility = true;
 
     
