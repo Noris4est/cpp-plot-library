@@ -18,6 +18,9 @@ namespace ax_components
             std::shared_ptr<cplt::OffsetSettings> offsetSettings
         );
         void draw() override;
+        void setColor(cv::Scalar color);
+        void setVisibility(bool flag);
+        void setThickness(int thickness);
     private:
         cv::Scalar color;
         bool visibility;

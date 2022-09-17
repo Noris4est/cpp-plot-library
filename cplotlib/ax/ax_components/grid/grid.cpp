@@ -22,18 +22,22 @@ namespace ax_components
     void Grid::setColor(cv::Scalar color)
     {
         genColor = color;
+        run_refresh_handlers();
     }
     void Grid::setSpecialBaseXYcolor(cv::Scalar color)
     {
         specialColor = color;
+        run_refresh_handlers();
     }
     void Grid::setThickness(int thickness)
     {
         genThickness = thickness;
+        run_refresh_handlers();
     }
     void Grid::setSpecialBaseXYthickness(int thickness)
     {
         specialThickness = thickness;
+        run_refresh_handlers();
     }
 
     void Grid::draw()

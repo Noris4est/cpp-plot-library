@@ -22,11 +22,10 @@ int main(int argc, char *argv[])
 
     auto axesManager = fig.addSubplots(nRows, nCols);
     auto ax00 = axesManager->get(0,0);
-    axesManager->get(0,0)->setXlim(-10, 10);
-    axesManager->get(0,0)->setYlim(-100,100);
-
-    axesManager->get(0,0)->setXticks({-10, - 5, 0, 5, 10});
-    axesManager->get(0,0)->setYticks({-50, -30, -10, 0, 70, 100});
+    ax00->setXlim(-10, 10);
+    ax00->setYlim(-100,100);
+    ax00->setXticks({-10, - 5, 0, 5, 10});
+    ax00->setYticks({-50, -30, -10, 0, 70, 100});
     ax00->setXlabel("X");
     ax00->setYlabel("Y");
     ax00->setTitle("New QWERTYqwert123");
@@ -38,8 +37,8 @@ int main(int argc, char *argv[])
     fig.save("../figure1.png");
     fig.show("figure1");
 
-    axesManager->get(0,0)->setOffsets(0.3, 0.3, 0.3, 0.3);
-    axesManager->get(0,0)->setChartBackgroundColor(colors::fuchsia);
+    ax00->setOffsets(0.3, 0.3, 0.3, 0.3);
+    ax00->getGrid()->setThickness(3);
     fig.show("figure2");
     int key = cv::waitKey(0);
     std::cout <<"END main!" << std::endl;

@@ -24,22 +24,27 @@ namespace ax_components
     void Ticks::setXticks(const std::vector<double> &xticks)
     {
         *(this->xticks) = xticks;
+        run_refresh_handlers();
     }
     void Ticks::setYticks(const std::vector<double> &yticks)
     {
         *(this->yticks) = yticks;
+        run_refresh_handlers();
     }
     void Ticks::setVisibility(bool flag)
     {
         this->visibility = flag;
+        run_refresh_handlers();
     }
     void Ticks::setFontScale(double fontScale)
     {
         this->fontScale = fontScale;
+        run_refresh_handlers();
     }
     void Ticks::setFontColor(cv::Scalar fontColor)
     {
         this->fontColor = fontColor;
+        run_refresh_handlers();
     }
 
     void Ticks::draw()
@@ -104,8 +109,5 @@ namespace ax_components
                 lineType);
             stream.str("");
         }
-
     }
-
-
 }

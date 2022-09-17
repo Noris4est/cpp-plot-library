@@ -84,4 +84,15 @@ namespace ax_components
         chartRect.height = round((1 - offsetSettings->top - offsetSettings->bottom) * axRect->height);
         return chartRect;
     }
+    void AxObject::register_refresh_handler(IRefreshHandler *handler)
+    {
+        handlers.push_back(handler);
+    }
+    void AxObject::run_refresh_handlers()
+    {
+        for (auto &handler : handlers)
+        {
+            handler->handle();
+        }
+    }
 }

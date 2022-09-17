@@ -4,7 +4,7 @@
 #include <memory>
 #include <opencv2/opencv.hpp>
 #include "../../commontypes.h"
-
+#include "../../refresh_handler/refresh_handler.hpp"
 namespace ax_components
 {
     class AxObject
@@ -36,8 +36,11 @@ namespace ax_components
             std::shared_ptr<cv::Rect> axRect
             );
         virtual void draw();
+        void register_refresh_handler(IRefreshHandler *handler);
     protected:
         cv::Rect createChartRect();
+        void run_refresh_handlers();
+        std::vector<IRefreshHandler*> handlers;
         std::shared_ptr<cv::Mat> frame;
         std::shared_ptr<cv::Rect> axRect;
         std::shared_ptr<cplt::OffsetSettings> offsetSettings;

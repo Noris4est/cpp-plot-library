@@ -21,4 +21,19 @@ namespace ax_components
             cv::rectangle(*frame, *axRect, color, thickness);
         }
     }
+    void AxBorder::setColor(cv::Scalar color)
+    {
+        this->color = color;
+        run_refresh_handlers();
+    }
+    void AxBorder::setVisibility(bool flag)
+    {
+        this->visibility = flag;
+        run_refresh_handlers();
+    }
+    void AxBorder::setThickness(int thickness)
+    {
+        this->thickness = thickness;
+        run_refresh_handlers();
+    }
 }

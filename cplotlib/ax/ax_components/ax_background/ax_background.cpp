@@ -21,4 +21,14 @@ namespace ax_components
             cv::rectangle(*frame, *axRect, color, -1);
         }
     }
+    void AxBackground::setColor(cv::Scalar color)
+    {
+        this->color = color;
+        run_refresh_handlers();
+    }
+    void AxBackground::setVisibility(bool flag)
+    {
+        this->visibility = flag;
+        run_refresh_handlers();
+    }
 }

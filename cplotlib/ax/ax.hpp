@@ -44,9 +44,6 @@ namespace cplt
         void setXticks(const std::vector<double> &xticks);
         void setYticks(const std::vector<double> &yticks);
 
-        void setChartBackgroundColor(cv::Scalar color);
-        void setAxBackgroundColor(cv::Scalar color);
-
         void setXlim(double xmin, double xmax);
         void setYlim(double ymin, double ymax);
         
@@ -56,7 +53,15 @@ namespace cplt
         void setTitle(const std::string &text);
         void setOffsets(double top, double bottom, double right, double left);
         
-        void setFrame(cv::Mat newAxFrame);
+        std::shared_ptr<ax_components::Grid> getGrid();
+        std::shared_ptr<ax_components::Ticks> getTicks();
+        std::shared_ptr<ax_components::Xlabel> getXlabel();
+        std::shared_ptr<ax_components::Ylabel> getYlabel();
+        std::shared_ptr<ax_components::Title> getTitle();
+        std::shared_ptr<ax_components::AxBorder> getAxBorder();
+        std::shared_ptr<ax_components::ChartBorder> getChartBorder();
+        std::shared_ptr<ax_components::AxBackground> getAxBackground();
+        std::shared_ptr<ax_components::ChartBackground> getChartBackground();
     private:
         std::shared_ptr<cv::Mat> frame; //изображение конкретного ax-а
         std::shared_ptr<cv::Rect> axRect;

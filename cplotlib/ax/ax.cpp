@@ -17,18 +17,35 @@ namespace cplt
         ylim = std::make_shared<std::pair<double, double>>();
 
         offsetSettings = std::make_shared<OffsetSettings>();
+
         ticks = std::make_shared<ax_components::Ticks>(frame, this->axRect, offsetSettings, xlim, ylim, xticks, yticks);
+        ticks->register_refresh_handler(this);
+
         grid = std::make_shared<ax_components::Grid>(frame, this->axRect, offsetSettings, xlim, ylim, xticks, yticks);
+        grid->register_refresh_handler(this);
+
         xlabel = std::make_shared<ax_components::Xlabel>(frame, this->axRect, offsetSettings);
+        xlabel->register_refresh_handler(this);
+
         ylabel = std::make_shared<ax_components::Ylabel>(frame, this->axRect, offsetSettings);
+        ylabel->register_refresh_handler(this);
+
         title = std::make_shared<ax_components::Title>(frame, this->axRect, offsetSettings);
+        title->register_refresh_handler(this);
 
         axBorder = std::make_shared<ax_components::AxBorder>(frame, this->axRect);
+        axBorder->register_refresh_handler(this);
+
         axBackground = std::make_shared<ax_components::AxBackground>(frame, this->axRect, colors::white);
+        axBackground->register_refresh_handler(this);
 
 
         chartBorder = std::make_shared<ax_components::ChartBorder>(frame, this->axRect, offsetSettings);
+        chartBorder->register_refresh_handler(this);
+
         chartBackground = std::make_shared<ax_components::ChartBackground>(frame, this->axRect, offsetSettings, colors::lightskyblue);
+        chartBackground->register_refresh_handler(this);
+        
         register_refresh_handler(std::bind(&Ax::refresh, this));
         refresh();
     }
@@ -114,10 +131,41 @@ namespace cplt
         offsetSettings->left = left;
         refresh();
     }
-    void Ax::setChartBackgroundColor(cv::Scalar color)
+    std::shared_ptr<ax_components::Grid> Ax::getGrid()
     {
-        chartBackground->setColor(color);
-        refresh();
+        return grid;
+    }
+    std::shared_ptr<ax_components::Ticks> Ax::getTicks()
+    {
+        return ticks;
+    }
+    std::shared_ptr<ax_components::Xlabel> Ax::getXlabel()
+    {
+        return xlabel;
+    }
+    std::shared_ptr<ax_components::Ylabel> Ax::getYlabel()
+    {
+        return ylabel;
+    }
+    std::shared_ptr<ax_components::Title> Ax::getTitle()
+    {
+        return title;
+    }
+    std::shared_ptr<ax_components::AxBorder> Ax::getAxBorder()
+    {
+        return axBorder;
+    }
+    std::shared_ptr<ax_components::ChartBorder> Ax::getChartBorder()
+    {
+        return chartBorder;
+    }
+    std::shared_ptr<ax_components::AxBackground> Ax::getAxBackground()
+    {
+        return axBackground;
+    }
+    std::shared_ptr<ax_components::ChartBackground> Ax::getChartBackground()
+    {
+        return chartBackground;
     }
 
 }

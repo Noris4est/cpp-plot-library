@@ -20,6 +20,7 @@ namespace ax_components
         );
         void draw() override;
         void setColor(cv::Scalar color);
+        void setVisibility(bool flag);
     private:
         cv::Scalar color;
         bool visibility = true;

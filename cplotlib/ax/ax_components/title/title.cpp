@@ -22,18 +22,22 @@ namespace ax_components
     void Title::setTitle(const std::string &titleText)
     {
         this->titleText = titleText;
+        run_refresh_handlers();
     }
     void Title::setFontColor(cv::Scalar fontColor)
     {
         this->fontColor = fontColor;
+        run_refresh_handlers();
     }
     void Title::setVisibility(bool visibilityFlag)
     {
         this->visibility = visibilityFlag;
+        run_refresh_handlers();
     }
     void Title::setFontScale(double fontScale)
     {
         this->fontScale = fontScale;
+        run_refresh_handlers();
     }
     void Title::draw()
     {

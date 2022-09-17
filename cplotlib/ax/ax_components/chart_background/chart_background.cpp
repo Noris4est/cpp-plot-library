@@ -26,5 +26,11 @@ namespace ax_components
     void ChartBackground::setColor(cv::Scalar color)
     {
         this->color = color;
+        run_refresh_handlers();
+    }
+    void ChartBackground::setVisibility(bool flag)
+    {
+        this->visibility = flag;
+        run_refresh_handlers();
     }
 }

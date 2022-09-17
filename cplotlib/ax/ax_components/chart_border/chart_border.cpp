@@ -23,4 +23,19 @@ namespace ax_components
             cv::rectangle(*frame, chartRect, color, thickness);
         }
     }
+    void ChartBorder::setColor(cv::Scalar color)
+    {
+        this->color = color;
+        run_refresh_handlers();
+    }
+    void ChartBorder::setVisibility(bool flag)
+    {
+        this->visibility = flag;
+        run_refresh_handlers();
+    }
+    void ChartBorder::setThickness(int thickness)
+    {
+        this->thickness = thickness;
+        run_refresh_handlers();
+    }
 }

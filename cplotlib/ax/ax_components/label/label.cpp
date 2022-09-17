@@ -25,17 +25,21 @@ namespace ax_components
     void Label::setLabel(const std::string &label)
     {
         this->label = label;
+        run_refresh_handlers();
     }
     void Label::setFontColor(cv::Scalar fontColor)
     {
         this->fontColor = fontColor;
+        run_refresh_handlers();
     }
     void Label::setFontScale(double fontScale)
     {
         this->fontScale = fontScale;
+        run_refresh_handlers();
     }
     void Label::setVisibility(bool visibility)
     {
         this->visibility = visibility;
+        run_refresh_handlers();
     }
 }

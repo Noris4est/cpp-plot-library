@@ -17,7 +17,9 @@ namespace ax_components
             std::shared_ptr<cv::Rect> axRect,
             cv::Scalar color = colors::deepskyblue
         );
-        void draw() override;
+        void draw() override; // not for user
+        void setColor(cv::Scalar);
+        void setVisibility(bool flag);
     private:
         cv::Scalar color;
         bool visibility;
