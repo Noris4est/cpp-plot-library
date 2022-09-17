@@ -12,6 +12,7 @@ namespace plots
         std::shared_ptr<cplt::lim_t> xlim,
         std::shared_ptr<cplt::lim_t> ylim)
         : AxObject(frame, axRect, offsetSettings, xlim, ylim),
+        settings(plotSettings),
         x(x),
         y(y) {}
     void Plot::draw()

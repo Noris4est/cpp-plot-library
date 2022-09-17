@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     }
 
     cplt::Figure fig = cplt::Figure(cv::Size(1000,800));
-    int nRows = 2, nCols = 2;
+    int nRows = 1, nCols = 1;
 
     auto axesManager = fig.addSubplots(nRows, nCols);
     auto ax00 = axesManager->get(0,0);
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     ax00->setTitle("New QWERTYqwert123");
 
     axesManager->get(0,0)->plot(x_vec,y_vec);
-
+    axesManager->get(0,0)->plot(x_vec,y_vec2, colors::orange, 2);
 
     cv::namedWindow("figure1");
     fig.save("../figure1.png");
