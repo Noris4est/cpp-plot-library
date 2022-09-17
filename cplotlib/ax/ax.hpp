@@ -26,9 +26,10 @@
 #include "plots/plot/plot.hpp"
 #include "ax_components/axobject.hpp"
 
+#include "../refresh_handler/refresh_handler.hpp"
 namespace cplt
 {
-    class Ax
+    class Ax : public IRefreshHandler
     {
     public:
         Ax(std::shared_ptr<cv::Mat> frame,

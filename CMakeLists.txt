@@ -21,6 +21,9 @@ cpp_Plot_LIbrary cpp_Plot_LIbrary.cpp
 ../cplotlib/ax/ax.hpp
 ../cplotlib/ax/ax.cpp
 ../cplotlib/tools/colors/colors.hpp
+#refresh_handler
+../cplotlib/refresh_handler/refresh_handler.cpp
+../cplotlib/refresh_handler/refresh_handler.hpp
 #common types
 ../cplotlib/commontypes.h
 #axobject
