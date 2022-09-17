@@ -9,7 +9,7 @@
 #include <iostream>
 #include "../commontypes.h"
 #include "../tools/colors/colors.hpp"
-#include "frametext/frametext.hpp"
+#include "../tools/frametext/frametext.hpp"
 #include "ax_components/ticks/ticks.hpp"
 #include "ax_components/grid/grid.hpp"
 #include "ax_components/label/xlabel/xlabel.hpp"

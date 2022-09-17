@@ -3,7 +3,7 @@
 
 #include <opencv2/opencv.hpp>
 #include "../label.hpp"
-#include "../../../frametext/frametext.hpp"
+#include "../../../../tools/frametext/frametext.hpp"
 namespace ax_components
 {
     class Ylabel : public Label

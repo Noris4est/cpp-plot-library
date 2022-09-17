@@ -17,7 +17,7 @@ namespace frameText
         int thickness = 1, 
         int lineType = cv::LINE_AA
         );
-    static int standartSymbolWidth = 22;
+    static int standartSymbolWidth = 18;
     static int standartSymbolHeight = 30;
     enum corner
     {

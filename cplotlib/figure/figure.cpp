@@ -12,7 +12,7 @@ namespace cplt
         offsetSettings.right = 0.01;
         offsetSettings.left = 0.01;
         figBackground = std::make_shared<FigBackground>(frame, colors::brown);
-        figBackground->draw();
+        figTitle = std::make_shared<FigTitle>(frame, offsetSettings);
         // if(figSettings.figureTitleShowOn)
         // {
         //     double standartSymbolWidth = 18.4;
@@ -23,8 +23,14 @@ namespace cplt
         //     cv::Point titleTopLeftPos = titleCenterPosition + cv::Point(-titleWidth/2, titleHeight/2);
         //     cv::putText(*frame, figSettings.title, titleTopLeftPos, cv::FONT_HERSHEY_DUPLEX, figSettings.titleFontScale, figSettings.titleColor,1,cv::LINE_AA);
         // }
+        refresh();
     }
 
+    void Figure::refresh()
+    {
+        figBackground->draw();
+        figTitle->draw();
+    }
     std::shared_ptr<cplt::AxesManager> Figure::addSubplots(int nRows,int nCols)
     {
         cv::Rect axesRect = getAxesRect();

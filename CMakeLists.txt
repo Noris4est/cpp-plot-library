@@ -33,8 +33,8 @@ cpp_Plot_LIbrary cpp_Plot_LIbrary.cpp
 ../cplotlib/ax/ax_components/ticks/ticks.hpp
 ../cplotlib/ax/ax_components/ticks/ticks.cpp
 #frametext
-../cplotlib/ax/frametext/frametext.hpp
-../cplotlib/ax/frametext/frametext.cpp
+../cplotlib/tools/frametext/frametext.hpp
+../cplotlib/tools/frametext/frametext.cpp
 #xlabel, ylabel
 ../cplotlib/ax/ax_components/label/label.hpp
 ../cplotlib/ax/ax_components/label/label.cpp
