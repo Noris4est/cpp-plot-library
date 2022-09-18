@@ -73,6 +73,26 @@ namespace plots
             p2 = inputPoints[i+1];
             cv::line(chartFrame, p1, p2, settings.lineColor, settings.lineWidth, cv::LINE_AA);
         }
-        
     }
+    void Plot::addPointToTail(double x, double y)
+    {
+        this->x.push_back(x);
+        this->y.push_back(y);
+        run_refresh_handlers();
+    }
+    void Plot::addPointToTail(cv::Point2d p)
+    {
+        addPointToTail(p.x, p.y);
+    }
+    void Plot::addPointToBegin(double x, double y)
+    {
+        this->x.insert(this->x.begin(), x);
+        this->y.insert(this->y.begin(), y);
+        run_refresh_handlers();
+    }
+    void Plot::addPointToBegin(cv::Point2d p)
+    {
+        addPointToBegin(p.x, p.y);
+    }
+
 }
