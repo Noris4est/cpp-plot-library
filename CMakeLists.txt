@@ -13,7 +13,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(
 cpp_Plot_LIbrary cpp_Plot_LIbrary.cpp
-
+../cplotlib/core.hpp
 ../cplotlib/figure/figure.hpp
 ../cplotlib/figure/figure.cpp
 ../cplotlib/axesManager/axesManager.hpp

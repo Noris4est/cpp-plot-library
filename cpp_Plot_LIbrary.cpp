@@ -1,9 +1,7 @@
 #include <iostream>
 #include <numeric> // for std::iota
-#include "cplotlib/figure/figure.hpp"
-#include "cplotlib/axesManager/axesManager.hpp"
-#include "cplotlib/ax/ax.hpp"
 
+#include "cplotlib/core.hpp"
 int main(int argc, char *argv[])
 {
     int vecSize = 21;
