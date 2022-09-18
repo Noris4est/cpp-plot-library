@@ -33,6 +33,8 @@ namespace cplt
     }
     std::shared_ptr<cplt::AxesManager> Figure::addSubplots(int nRows,int nCols)
     {
+        if (nRows < 1 || nCols < 1)
+            throw std::runtime_error("Error: rRows < 0 or nCols < 0");
         cv::Rect axesRect = getAxesRect();
         axesManager = std::make_shared<cplt::AxesManager>(nRows, nCols, getAxesRect(), frame);
         return axesManager;

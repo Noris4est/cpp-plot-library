@@ -67,7 +67,6 @@ namespace plots
             p = pointScaling(p);
         }
         cv::Point2d p1, p2;
-        std::cout << inputPoints.empty();
         for(int i = 0; i < inputPoints.size() - 1; i++)
         {
             p1 = inputPoints[i];
