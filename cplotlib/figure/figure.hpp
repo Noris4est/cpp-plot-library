@@ -31,6 +31,7 @@ namespace cplt
         std::shared_ptr<FigTitle> figTitle;
         std::shared_ptr<AxesManager> axesManager = nullptr;
         std::shared_ptr<cv::Mat> frame;
+        bool needRefresh;
     }; /// -- END Figure
 }
 

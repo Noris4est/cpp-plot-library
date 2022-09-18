@@ -11,25 +11,26 @@ namespace cplt
         offsetSettings.bottom = 0.01;
         offsetSettings.right = 0.01;
         offsetSettings.left = 0.01;
-        figBackground = std::make_shared<FigBackground>(frame, colors::brown);
-        figTitle = std::make_shared<FigTitle>(frame, offsetSettings);
-        // if(figSettings.figureTitleShowOn)
-        // {
-        //     double standartSymbolWidth = 18.4;
-        //     int titleWidth = round(figSettings.title.size()*standartSymbolWidth*figSettings.titleFontScale);
-        //     double standartSymbolHeight = 30;
-        //     int titleHeight = round(standartSymbolHeight*figSettings.titleFontScale);
-        //     cv::Point titleCenterPosition = cv::Point(figSettings.figsize.width/2, figSettings.figsize.height * 0.5 * figSettings.topOffset);
-        //     cv::Point titleTopLeftPos = titleCenterPosition + cv::Point(-titleWidth/2, titleHeight/2);
-        //     cv::putText(*frame, figSettings.title, titleTopLeftPos, cv::FONT_HERSHEY_DUPLEX, figSettings.titleFontScale, figSettings.titleColor,1,cv::LINE_AA);
-        // }
+        figBackground = std::make_shared<FigBackground>(needRefresh, frame, colors::brown);
+        figTitle = std::make_shared<FigTitle>(needRefresh, frame, offsetSettings);
         refresh();
     }
 
     void Figure::refresh()
     {
-        figBackground->draw();
-        figTitle->draw();
+        if(needRefresh)
+        {
+            figBackground->draw();
+            figTitle->draw();
+            needRefresh = false;
+            if(axesManager != nullptr)
+                axesManager->refreshAll();
+        }
+        else
+        {
+            if(axesManager != nullptr)
+                axesManager->refreshChanged();
+        }
     }
     std::shared_ptr<cplt::AxesManager> Figure::addSubplots(int nRows,int nCols)
     {
@@ -42,11 +43,13 @@ namespace cplt
 
     void Figure::show(const std::string &winName)
     {
+        refresh();
         cv::imshow(winName, *frame);
     }
 
     void Figure::save(const std::string &path)
     {
+        refresh();
         cv::imwrite(path, *frame);
     }
 
