@@ -6,12 +6,11 @@ namespace cplt
     {
         frame = std::make_shared<cv::Mat>(figsize, CV_8UC3);
         this->figsize = std::make_shared<cv::Size>(figsize);
-        // *frame = colors::white;
-        offsetSettings.top = 0.1;
+        offsetSettings.top = 0.05;
         offsetSettings.bottom = 0.01;
         offsetSettings.right = 0.01;
         offsetSettings.left = 0.01;
-        figBackground = std::make_shared<FigBackground>(needRefresh, frame, colors::brown);
+        figBackground = std::make_shared<FigBackground>(needRefresh, frame, colors::pastelsky);
         figTitle = std::make_shared<FigTitle>(needRefresh, frame, offsetSettings);
         refresh();
     }
@@ -20,9 +19,9 @@ namespace cplt
     {
         if(needRefresh)
         {
+            needRefresh = false;
             figBackground->draw();
             figTitle->draw();
-            needRefresh = false;
             if(axesManager != nullptr)
                 axesManager->refreshAll();
         }

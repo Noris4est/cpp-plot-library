@@ -44,7 +44,7 @@ namespace cplt
         chartBorder = std::make_shared<ax_components::ChartBorder>(frame, this->axRect, offsetSettings);
         chartBorder->register_refresh_handler(this);
 
-        chartBackground = std::make_shared<ax_components::ChartBackground>(frame, this->axRect, offsetSettings, colors::lightskyblue);
+        chartBackground = std::make_shared<ax_components::ChartBackground>(frame, this->axRect, offsetSettings, colors::white);
         chartBackground->register_refresh_handler(this);
         
         register_refresh_handler(std::bind(&Ax::needRefreshOn, this));

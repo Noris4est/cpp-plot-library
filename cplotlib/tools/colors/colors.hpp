@@ -151,5 +151,9 @@ namespace colors// BGR
     static cv::Scalar whitesmoke(245, 245, 245);
     static cv::Scalar yellow(0, 255, 255);
     static cv::Scalar yellowgreen(50, 205, 154);
+
+    static cv::Scalar paleyellow(171, 205, 239); //бледно-желтый
+    static cv::Scalar paleblue(239, 205, 171); //бледно-голубой
+    static cv::Scalar pastelsky(254,247,222); //пастельно-небесный
 }
 #endif /* COLORS_H: */

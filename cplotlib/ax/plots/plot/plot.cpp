@@ -94,5 +94,4 @@ namespace plots
     {
         addPointToBegin(p.x, p.y);
     }
-
 }

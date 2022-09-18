@@ -16,14 +16,14 @@ int main(int argc, char *argv[])
     }
 
     cplt::Figure fig = cplt::Figure(cv::Size(1000,800));
-    int nRows = 2, nCols = 3;
+    int nRows = 2, nCols = 2;
 
     auto axesManager = fig.addSubplots(nRows, nCols);
     auto ax00 = axesManager->get(0,0);
     ax00->setXlim(-10, 10);
     ax00->setYlim(-100,100);
-    ax00->setXticks({-10, - 5, 0, 5, 10});
-    ax00->setYticks({-50, -30, -10, 0, 70, 100});
+    // ax00->setXticks({-10, - 5, 0, 5, 10});
+    // ax00->setYticks({-50, -30, -10, 0, 70, 100});
     ax00->setXlabel("X");
     ax00->setYlabel("Y");
     ax00->setTitle("New QWERTYqwert123");
