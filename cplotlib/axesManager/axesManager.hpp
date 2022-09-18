@@ -27,6 +27,8 @@ namespace cplt
             std::shared_ptr<cv::Mat> frame);
         std::shared_ptr<Ax> get(int row, int column);
         void set(const std::shared_ptr<Ax> &ax, int row, int column);
+        void refreshAll();
+        void refreshChanged();
     private:
         std::map<cv::Point, std::shared_ptr<Ax>, cmpPoint> axes;
         int nRows, nCols; // subplots grid

@@ -39,5 +39,20 @@ namespace cplt
     {
         return axes[cv::Point(row, column)];
     }
+    void AxesManager::refreshAll()
+    {
+        for (auto &[point, ax] : axes) // механизм стркуторированной привязки
+        {
+            ax->refresh();
+        }
+    }
+    void AxesManager::refreshChanged()
+    {
+        for (auto &[point, ax] : axes) // механизм стркуторированной привязки
+        {
+            if(ax->getNeedRefresh())
+                ax->refresh();
+        }
+    }
 
 }
