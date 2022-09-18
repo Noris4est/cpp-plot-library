@@ -4,6 +4,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp> //на время тестов
+#include <memory>
 #include <tuple>
 #include <vector>
 #include <iostream>
@@ -35,7 +36,7 @@ namespace cplt
         Ax(std::shared_ptr<cv::Mat> frame,
         cv::Rect axRect);
 
-        void plot(
+        std::shared_ptr<plots::Plot> plot(
             const std::vector<double> &x, 
             const std::vector<double> &y,
             cv::Scalar lineColor = colors::red,
@@ -62,6 +63,11 @@ namespace cplt
         std::shared_ptr<ax_components::ChartBorder> getChartBorder();
         std::shared_ptr<ax_components::AxBackground> getAxBackground();
         std::shared_ptr<ax_components::ChartBackground> getChartBackground();
+        
+        std::shared_ptr<plots::Plot> getPlot(int number);
+        void refresh(); // Может вызываться как внутри Ax, так через методы axesManager
+        bool getNeedRefresh();
+
     private:
         std::shared_ptr<cv::Mat> frame; //изображение конкретного ax-а
         std::shared_ptr<cv::Rect> axRect;
@@ -82,8 +88,8 @@ namespace cplt
 
         
         std::vector<std::shared_ptr<ax_components::AxObject>> plotsPipeline;
-
-        void refresh(); // Может вызываться как внутри Ax, так через методы axesManager
+        bool needRefresh; // флаг необходимости произвести перерисовку. Требуется не при всех изменениях.
+        void needRefreshOn(); // установка флага необходимости перерисовки в true
     };
 }
 #endif /* AX_HPP: */

@@ -17,6 +17,7 @@ namespace cplt
         ylim = std::make_shared<std::pair<double, double>>();
 
         offsetSettings = std::make_shared<OffsetSettings>();
+        *offsetSettings = OffsetSettings(0.1, 0.15, 0.02, 0.2);
 
         ticks = std::make_shared<ax_components::Ticks>(frame, this->axRect, offsetSettings, xlim, ylim, xticks, yticks);
         ticks->register_refresh_handler(this);
@@ -46,12 +47,20 @@ namespace cplt
         chartBackground = std::make_shared<ax_components::ChartBackground>(frame, this->axRect, offsetSettings, colors::lightskyblue);
         chartBackground->register_refresh_handler(this);
         
-        register_refresh_handler(std::bind(&Ax::refresh, this));
-        refresh();
+        register_refresh_handler(std::bind(&Ax::needRefreshOn, this));
+        needRefresh = true;
     }
-    
+    void Ax::needRefreshOn()
+    {
+        needRefresh = true;
+    }
+    bool Ax::getNeedRefresh()
+    {
+        return needRefresh;
+    }
     void Ax::refresh()
     {
+        needRefresh = false;
         axBackground->draw();
         chartBackground->draw();
         
@@ -71,7 +80,7 @@ namespace cplt
         title->draw();
     }
 
-    void Ax::plot(
+    std::shared_ptr<plots::Plot> Ax::plot(
         const std::vector<double> &x, 
         const std::vector<double> &y,
         cv::Scalar lineColor,
@@ -82,46 +91,47 @@ namespace cplt
         settings.lineWidth = lineWidth;
 
         std::shared_ptr<plots::Plot> p = std::make_shared<plots::Plot>(x, y, settings, frame, axRect, offsetSettings, xlim, ylim);
+        p->register_refresh_handler(this);
         plotsPipeline.push_back(p);
-        refresh();
+        needRefresh = true;
+        return p;
     }
-
 
     void Ax::setXticks(const std::vector<double> &xticks)
     {
         *(this->xticks) = xticks;
-        refresh();
+        needRefresh = true;
     }
     void Ax::setYticks(const std::vector<double> &yticks)
     {
         *(this->yticks) = yticks;
-        refresh();
+        needRefresh = true;
     }
 
     void Ax::setXlim(double xmin, double xmax)
     {
         *xlim = {xmin, xmax};
-        refresh();
+        needRefresh = true;
     }
     void Ax::setYlim(double ymin, double ymax)
     {
         *ylim = {ymin, ymax};
-        refresh();
+        needRefresh = true;
     }
     void Ax::setXlabel(std::string text)
     {
         xlabel->setLabel(text);
-        refresh();
+        needRefresh = true;
     }
     void Ax::setYlabel(std::string text)
     {
         ylabel->setLabel(text);
-        refresh();
+        needRefresh = true;
     }
     void Ax::setTitle(const std::string &text)
     {
         title->setTitle(text);
-        refresh();
+        needRefresh = true;
     }
     void Ax::setOffsets(double top, double bottom, double right, double left)
     {
@@ -129,7 +139,7 @@ namespace cplt
         offsetSettings->bottom = bottom;
         offsetSettings->right = right;
         offsetSettings->left = left;
-        refresh();
+        needRefresh = true;
     }
     std::shared_ptr<ax_components::Grid> Ax::getGrid()
     {
@@ -167,5 +177,17 @@ namespace cplt
     {
         return chartBackground;
     }
+    std::shared_ptr<plots::Plot> Ax::getPlot(int number)
+    {
+        if(number < 0 || plotsPipeline.size() <= number)
+            throw std::runtime_error("Error: check valid argument in call getPlot(number)");
+        auto selectedPlot = plotsPipeline[number];
+        /*
+            Небезопасное приведение типа от родительского к дочернему
+        */
+        auto convTypePlot = std::dynamic_pointer_cast<plots::Plot>(selectedPlot);
+        return convTypePlot; 
+    }
+
 
 }
