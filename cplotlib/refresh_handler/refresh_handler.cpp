@@ -2,7 +2,7 @@
 
 IRefreshHandler::IRefreshHandler()
 {
-
+    handler = [](){};
 }
 
 void IRefreshHandler::register_refresh_handler(std::function<void(void)> handler)

@@ -10,7 +10,9 @@
 class FigTitle
 {
 public:
-    FigTitle(std::shared_ptr<cv::Mat> frame,
+    FigTitle(
+        bool needRefresh,
+        std::shared_ptr<cv::Mat> frame,
         cplt::OffsetSettings offset);
     void setTitle(const std::string &titleText);
     void setFontScale(double fontScale);
@@ -28,6 +30,7 @@ private:
     int fontFace;//шрифт-тип (cv::FONT_HERSHEY_DUPLEX)
     int lineType;//cv::LINE_AA
     int lineThickness;//thisckness = 1
+    bool &needRefresh;
 };
 
 #endif // FIG_TITLE_H

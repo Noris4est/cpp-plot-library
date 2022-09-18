@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     }
 
     cplt::Figure fig = cplt::Figure(cv::Size(1000,800));
-    int nRows = 1, nCols = 1;
+    int nRows = 2, nCols = 3;
 
     auto axesManager = fig.addSubplots(nRows, nCols);
     auto ax00 = axesManager->get(0,0);
@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
 
     ax00->setOffsets(0.3, 0.3, 0.3, 0.3);
     ax00->getGrid()->setThickness(2);
+    ax00->getPlot(0)->addPointToTail(8,-70);
+    ax00->getPlot(0)->addPointToBegin(-6, 60);
     fig.show("figure2");
     int key = cv::waitKey(0);
     std::cout <<"END main!" << std::endl;

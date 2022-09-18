@@ -8,6 +8,7 @@ class FigBackground
 {
 public:
     FigBackground(
+        bool needRefresh,
         std::shared_ptr<cv::Mat> frame,
         cv::Scalar color = colors::white);
     void setColor(cv::Scalar color);
@@ -17,5 +18,6 @@ private:
     std::shared_ptr<cv::Mat> frame;
     cv::Scalar color;
     bool visibility = true;
+    bool &needRefresh;
 };
 #endif /* FRAME_BACKGROUND_H */
