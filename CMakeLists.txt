@@ -76,6 +76,10 @@ cpp_Plot_LIbrary cpp_Plot_LIbrary.cpp
 ../cplotlib/ax/plots/plot/plot.hpp
 ../cplotlib/ax/plots/plot/plot.cpp
 
+#vector_creation_routines
+../cplotlib/tools/vector_creation_routines/vector_creation_routines.hpp
+../cplotlib/tools/vector_creation_routines/vector_creation_routines.cpp
+
 )
 
 target_link_libraries(cpp_Plot_LIbrary ${OpenCV_LIBS})

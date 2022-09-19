@@ -15,5 +15,6 @@
     всего Ax.
 */
 #include "figure/figure.hpp"
+#include "tools/vector_creation_routines/vector_creation_routines.hpp"
 
 #endif // CORE_H
