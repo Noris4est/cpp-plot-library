@@ -49,9 +49,13 @@ namespace ax_components
     };
 
     template <typename Ta, typename Tb>    
-    void delOutsiders(std::vector<Ta> &v,const std::pair<Tb, Tb> &lim)
+    void delOutsiders(std::vector<Ta> &v,const std::pair<Tb, Tb> &lim, bool deleteEdges = false)
     {
-        auto cond = [lim](double value){return value <= lim.first || value >= lim.second;};
+        std::function<bool(double)> cond;
+        if(deleteEdges)
+            cond = [lim](double value){return value <= lim.first || value >= lim.second;};
+        else
+            cond = [lim](double value){return value < lim.first || value > lim.second;};
         auto it = std::remove_if(v.begin(), v.end(), cond);
         v.erase(it, v.end());
     } // -- END delOutsiders

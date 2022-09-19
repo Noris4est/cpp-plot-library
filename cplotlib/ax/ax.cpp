@@ -17,7 +17,7 @@ namespace cplt
         ylim = std::make_shared<std::pair<double, double>>();
 
         offsetSettings = std::make_shared<OffsetSettings>();
-        *offsetSettings = OffsetSettings(0.1, 0.15, 0.02, 0.2);
+        *offsetSettings = OffsetSettings(0.1, 0.15, 0.1, 0.2);
 
         ticks = std::make_shared<ax_components::Ticks>(frame, this->axRect, offsetSettings, xlim, ylim, xticks, yticks);
         ticks->register_refresh_handler(this);

@@ -46,8 +46,13 @@ namespace ax_components
         cv::Rect chartRect;
         chartRect = createChartRect(); // using frame, axRect, offsetSettings
         chartFrame = (*frame)(chartRect);
-        delOutsiders(*xticks, *xlim); // удаление значений вне диапазонов xlim, ylim ( и значений, находящихся на границе тоже)
-        delOutsiders(*yticks, *ylim);
+        
+        cplt::ticks_t xticks_grid, yticks_grid;
+        std::copy(xticks->begin(), xticks->end(), std::back_inserter(xticks_grid));
+        std::copy(yticks->begin(), yticks->end(), std::back_inserter(yticks_grid));
+
+        delOutsiders(xticks_grid, *xlim, true); // удаление значений вне диапазонов xlim, ylim ( и значений, находящихся на границе тоже)
+        delOutsiders(yticks_grid, *ylim, true);
         std::vector<int> chartXticks, chartYticks;
         scalling(*xticks, chartXticks, xlim->first, xlim->second, 0, chartFrame.cols-1);
         scalling(*yticks, chartYticks, ylim->first, ylim->second, chartFrame.rows-1, 0); // инверсия

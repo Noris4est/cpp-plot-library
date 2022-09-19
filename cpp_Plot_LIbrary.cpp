@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
         y_vec2.push_back(x_vec[i]*x_vec[i]*x_vec[i]);
     }
 
-    cplt::Figure fig = cplt::Figure(cv::Size(1000,800));
+    cplt::Figure fig = cplt::Figure(cv::Size(1300, 800));
     int nRows = 2, nCols = 2;
 
     auto axesManager = fig.addSubplots(nRows, nCols);
@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     ax00->setYlim(-100,100);
 
     ax00->setXticks({-10, - 5, 0, 5, 10});
+    // ax00->setXticks(cplt::linspace(-10,10,11));
     ax00->setYticks({-50, -30, -10, 0, 70, 100});
     
     ax00->setXlabel("X");
