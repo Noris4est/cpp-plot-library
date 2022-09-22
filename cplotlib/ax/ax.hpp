@@ -41,6 +41,10 @@ namespace cplt
             const std::vector<double> &y,
             cv::Scalar lineColor = colors::red,
             int lineWidth = 1);
+        std::shared_ptr<plots::Plot> plot(
+            std::function<double(double)> func,
+            cv::Scalar lineColor = colors::green,
+            int lineWidth = 1);
 
         void setXticks(const std::vector<double> &xticks);
         void setYticks(const std::vector<double> &yticks);

@@ -14,8 +14,36 @@ namespace plots
         : AxObject(frame, axRect, offsetSettings, xlim, ylim),
         settings(plotSettings),
         x(x),
-        y(y) {}
+        y(y) 
+    {}
+    Plot::Plot(std::function<double(double)> func,
+        plotsSettings::PlotSettings plotSettings,
+        std::shared_ptr<cv::Mat> frame,
+        std::shared_ptr<cv::Rect> axRect,
+        std::shared_ptr<cplt::OffsetSettings> offsetSettings,
+        std::shared_ptr<cplt::lim_t> xlim,
+        std::shared_ptr<cplt::lim_t> ylim)
+        : AxObject(frame, axRect, offsetSettings, xlim, ylim),
+        settings(plotSettings),
+        plottingFunc(func)
+    {
+        usingFunc = true;
+    }
     void Plot::draw()
+    {
+        if(usingFunc)
+        {
+            x.clear();
+            y.clear();
+            x =  cplt::arange(xlim->first, xlim->second + funcStep, funcStep);
+            for (auto x_el : x)
+            {
+                y.push_back(plottingFunc(x_el));
+            }
+        }
+        useVectorsDraw(); // построение графика Plot по точкам из векторов x, y;
+    }
+    void Plot::useVectorsDraw()
     {
         if(x.empty() || y.empty())
         {
@@ -23,7 +51,7 @@ namespace plots
         }
         if(x.size() != y.size())
         {
-            throw "Ax::plot - размер векторов x и y должен быть одинаков";
+            throw std::runtime_error("Ax::plot - размер векторов x и y должен быть одинаков");
         }
     
         std::vector<cv::Point2d> inputPoints;
@@ -74,6 +102,7 @@ namespace plots
             cv::line(chartFrame, p1, p2, settings.lineColor, settings.lineWidth, cv::LINE_AA);
         }
     }
+
     void Plot::addPointToTail(double x, double y)
     {
         this->x.push_back(x);

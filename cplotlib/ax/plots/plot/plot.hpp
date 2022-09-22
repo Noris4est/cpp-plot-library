@@ -4,6 +4,7 @@
 #include <vector>
 #include "../plots_settings.hpp"
 #include "../../ax_components/axobject.hpp"
+#include "../../../tools/vector_creation_routines/vector_creation_routines.hpp"
 
 namespace plots 
 {
@@ -19,6 +20,13 @@ namespace plots
             std::shared_ptr<cplt::OffsetSettings> offsetSettings,
             std::shared_ptr<cplt::lim_t> xlim,
             std::shared_ptr<cplt::lim_t> ylim);
+        Plot(std::function<double(double)> func,
+            plotsSettings::PlotSettings plotSettings,
+            std::shared_ptr<cv::Mat> frame,
+            std::shared_ptr<cv::Rect> axRect,
+            std::shared_ptr<cplt::OffsetSettings> offsetSettings,
+            std::shared_ptr<cplt::lim_t> xlim,
+            std::shared_ptr<cplt::lim_t> ylim);
         void draw() override; //not for users
 
         void addPointToBegin(cv::Point2d p);
@@ -28,8 +36,13 @@ namespace plots
         int getTotalPoints(); // Возвращает общее число точек графика
         void insertPoint(int position, cv::Point2d point); //встав. точку в согласно position
     private:
+        void useVectorsDraw();
         plotsSettings::PlotSettings settings;
         std::vector<double> x, y;
+
+        bool usingFunc = false;
+        std::function <double(double)> plottingFunc;
+        double funcStep = 0.01;
     };
 }
 #endif /* PLOT_H */

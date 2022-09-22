@@ -97,6 +97,23 @@ namespace cplt
         return p;
     }
 
+    std::shared_ptr<plots::Plot> Ax::plot(
+        std::function<double(double)> func,
+        cv::Scalar lineColor,
+        int lineWidth)
+    {
+        if(!func)
+            throw std::runtime_error("Error: argument \"func\" is empty");
+        plotsSettings::PlotSettings settings;
+        settings.lineColor = lineColor;
+        settings.lineWidth = lineWidth;
+        std::shared_ptr<plots::Plot> p = std::make_shared<plots::Plot>(func, settings, frame, axRect, offsetSettings, xlim, ylim);
+        p->register_refresh_handler(this);
+        plotsPipeline.push_back(p);
+        needRefresh = true;
+        return p;
+    }
+
     void Ax::setXticks(const std::vector<double> &xticks)
     {
         *(this->xticks) = xticks;
