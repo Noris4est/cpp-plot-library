@@ -29,6 +29,7 @@ namespace plots
             std::shared_ptr<cplt::lim_t> ylim);
         void draw() override; //not for users
 
+        //usingFunc == false
         void addPointToBegin(cv::Point2d p);
         void addPointToBegin(double x, double y);
         void addPointToTail(cv::Point2d p);
@@ -36,7 +37,7 @@ namespace plots
         int getTotalPoints(); // Возвращает общее число точек графика
         void insertPoint(int position, cv::Point2d point); //встав. точку в согласно position
     private:
-        void useVectorsDraw();
+        void useVectorsDraw(); // Построение графика на основании содержания векторов x, y;
         plotsSettings::PlotSettings settings;
         std::vector<double> x, y;
 
