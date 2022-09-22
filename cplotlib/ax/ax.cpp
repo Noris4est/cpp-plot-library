@@ -130,10 +130,20 @@ namespace cplt
         *xlim = {xmin, xmax};
         needRefresh = true;
     }
+    void Ax::setXlim(cplt::lim_t xlim)
+    {
+        *(this->xlim) = xlim;
+        needRefresh = true;
+    }
+
     void Ax::setYlim(double ymin, double ymax)
     {
         *ylim = {ymin, ymax};
         needRefresh = true;
+    }
+    void Ax::setYlim(cplt::lim_t ylim)
+    {
+        *(this->ylim) = ylim;
     }
     void Ax::setXlabel(std::string text)
     {

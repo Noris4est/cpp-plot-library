@@ -50,8 +50,11 @@ namespace cplt
         void setYticks(const std::vector<double> &yticks);
 
         void setXlim(double xmin, double xmax);
+        void setXlim(cplt::lim_t xlim);
+
         void setYlim(double ymin, double ymax);
-        
+        void setYlim(cplt::lim_t ylim);
+
         void setXlabel(std::string text);
         void setYlabel(std::string text);
 
