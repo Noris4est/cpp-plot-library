@@ -12,11 +12,9 @@ std::vector<double> cplt::linspace(double start, double end, int num)
         return result;
     }
     double step = (end - start) / (num - 1);
-    double current_item = start;
-    for(int i = 1; i < num; i++)
+    for(int i = 0; i < num; i++)
     {
-        result.push_back(current_item);
-        current_item += step;
+        result.push_back(start + i*step);
     }
     return result;
 }
