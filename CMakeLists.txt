@@ -57,6 +57,9 @@ cpp_Plot_LIbrary cpp_Plot_LIbrary.cpp
 #ax_border
 ../cplotlib/ax/ax_components/ax_border/ax_border.cpp
 ../cplotlib/ax/ax_components/ax_border/ax_border.hpp
+#ax_legend
+../cplotlib/ax/ax_components/legend/legend.cpp
+../cplotlib/ax/ax_components/legend/legend.hpp
 #chart_border
 ../cplotlib/ax/ax_components/chart_border/chart_border.cpp
 ../cplotlib/ax/ax_components/chart_border/chart_border.hpp
@@ -79,6 +82,7 @@ cpp_Plot_LIbrary cpp_Plot_LIbrary.cpp
 #vector_creation_routines
 ../cplotlib/tools/vector_creation_routines/vector_creation_routines.hpp
 ../cplotlib/tools/vector_creation_routines/vector_creation_routines.cpp
+
 
 )
 
