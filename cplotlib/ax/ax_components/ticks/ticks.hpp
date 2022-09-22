@@ -35,6 +35,8 @@ namespace ax_components
         int fontFace;//шрифт-тип (cv::FONT_HERSHEY_DUPLEX)
         int lineType;//cv::LINE_AA
         int lineThickness;//thisckness = 1
+        cv::Point xtickOffset = {0, 5};
+        cv::Point ytickOffset = {-5, 0};
         int numDigitsAfterDot;
     };
 }

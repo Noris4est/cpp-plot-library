@@ -63,6 +63,7 @@ namespace ax_components
         // непосредственно отрисовка штрихов и численных значений отсчетов 
         double tick;
         int chartTick;
+        cv::Point xtickOffset{0, 5};
         for (int i = 0; i < chartXticks.size(); i++)
         {
             tick = (*xticks)[i];// *((*xticks).begin() + i)
@@ -76,7 +77,7 @@ namespace ax_components
                 *frame, 
                 s,
                 frameText::corner::topCenter,
-                p2,
+                p2 + xtickOffset,
                 0,
                 fontFace,
                 fontScale,
@@ -87,6 +88,7 @@ namespace ax_components
         }
 
         int yTickWidth = 10;
+        cv::Point ytickOffset{-5, 0};
         for (int i = 0; i < chartYticks.size(); i++)
         {
             tick = (*yticks)[i];// *((*xticks).begin() + i)
@@ -100,7 +102,7 @@ namespace ax_components
                 *frame, 
                 s,
                 frameText::corner::centerRight,
-                p1,
+                p1 + ytickOffset,
                 0,
                 fontFace,
                 fontScale,
