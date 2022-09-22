@@ -123,4 +123,13 @@ namespace plots
     {
         addPointToBegin(p.x, p.y);
     }
+    Plot* Plot::setLabel(const std::string label)
+    {
+        this->label = label;
+        return this;
+    }
+    const std::string& Plot::getLabel()
+    {
+        return label;
+    }
 }

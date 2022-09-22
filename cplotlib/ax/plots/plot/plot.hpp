@@ -29,6 +29,8 @@ namespace plots
             std::shared_ptr<cplt::lim_t> ylim);
         void draw() override; //not for users
 
+        Plot* setLabel(const std::string label);
+        const std::string& getLabel();
         //usingFunc == false
         void addPointToBegin(cv::Point2d p);
         void addPointToBegin(double x, double y);
@@ -40,7 +42,8 @@ namespace plots
         void useVectorsDraw(); // Построение графика на основании содержания векторов x, y;
         plotsSettings::PlotSettings settings;
         std::vector<double> x, y;
-
+        std::string label = "";
+        
         bool usingFunc = false;
         std::function <double(double)> plottingFunc;
         double funcStep = 0.01;
