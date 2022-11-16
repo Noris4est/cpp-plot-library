@@ -14,15 +14,15 @@ namespace ax_components
         cv::Rect chartRect;
         chartRect = createChartRect(); // using frame, axRect, offsetSettings
         int precisionOffset = 4;
-        cv::Point ylabelCenter = cv::Point(
-            axRect->x + frameText::standartSymbolHeight*fontScale/2 + precisionOffset, 
+        cv::Point ylabelTopCenterCornerPos = cv::Point(
+            axRect->x + precisionOffset, 
             chartRect.y + chartRect.height/2);
 
         frameText::putText(
             *frame,
             label,
-            frameText::center,
-            ylabelCenter,
+            frameText::topCenter,
+            ylabelTopCenterCornerPos,
             90,
             fontFace,
             fontScale,

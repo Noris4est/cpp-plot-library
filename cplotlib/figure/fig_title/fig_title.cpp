@@ -40,13 +40,13 @@ void FigTitle::setFontScale(double fontScale)
 }
 void FigTitle::draw()
 {
-    int precisionOffset = 0;
-    cv::Point titleCenterPos = {frame->cols/2, + frameText::standartSymbolHeight/2 + precisionOffset};
+    int precisionOffset = 5;
+    cv::Point titleTopCenterCornerPos = {frame->cols/2, precisionOffset};
     frameText::putText(
         *frame,
         titleText,
-        frameText::center,
-        titleCenterPos,
+        frameText::topCenter,
+        titleTopCenterCornerPos,
         0,
         fontFace,
         fontScale,

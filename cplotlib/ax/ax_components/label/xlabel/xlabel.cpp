@@ -13,16 +13,16 @@ namespace ax_components
     {
         cv::Rect chartRect;
         chartRect = createChartRect(); // using frame, axRect, offsetSettings
-        int precisionOffset = 4;
-        cv::Point xlabelCenter = cv::Point(
+        int precisionOffset = 5;
+        cv::Point xlabelBottomCenterCornerPos = cv::Point(
             chartRect.x + chartRect.width/2, 
-            axRect->y + axRect->height - frameText::standartSymbolHeight*fontScale/2 - precisionOffset);
+            axRect->y + axRect->height - precisionOffset);
         
         frameText::putText(
             *frame,
             label,
-            frameText::center,
-            xlabelCenter,
+            frameText::bottomCenter,
+            xlabelBottomCenterCornerPos,
             0,
             fontFace,
             fontScale,

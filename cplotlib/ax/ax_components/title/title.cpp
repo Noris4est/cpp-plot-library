@@ -41,13 +41,13 @@ namespace ax_components
     }
     void Title::draw()
     {
-        int precisionOffset = 0;
-        cv::Point titleCenterPos = {axRect->x + axRect->width/2, axRect->y + frameText::standartSymbolHeight/2 + precisionOffset};
+        int precisionOffset = 3;
+        cv::Point titleTopCenterCornerPos = {axRect->x + axRect->width/2, axRect->y + precisionOffset};
         frameText::putText(
             *frame,
             titleText,
-            frameText::center,
-            titleCenterPos,
+            frameText::topCenter,
+            titleTopCenterCornerPos,
             0,
             fontFace,
             fontScale,

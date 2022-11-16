@@ -15,8 +15,10 @@ void frameText::putText(
 )
 {
     cv::Point bottomLeftPos;// потому что в стандартный cv::putText подается bottomLeft
-    int textWidth = round(text.size()*standartSymbolWidth*fontScale);
-    int textHeight = round(standartSymbolHeight*fontScale);
+    int baseline = 0;
+    cv::Size textSize = cv::getTextSize(text, fontFace, fontScale, thickness, &baseline);
+    int textWidth = textSize.width;
+    int textHeight = textSize.height;
     switch (cornerType)
     {
     case bottomLeft:
@@ -88,10 +90,10 @@ void frameText::putText(
             cv::Scalar(255,255,255),
             thickness,
             lineType);
+        // Вращение осуществляется вокруг cornPos
         cv::Mat rotationMatrix = cv::getRotationMatrix2D(cornPos + offset, angle, 1.0);//couter clockwise rotation
         cv::warpAffine(text_image_color, text_image_color, rotationMatrix, text_image_color.size());
         cv::warpAffine(text_image_white, text_image_white, rotationMatrix, text_image_white.size());
-        // cv::imwrite("../text_image_white.png",text_image_white);
         text_image_color = text_image_color(cv::Rect(offset, img.size()));
         text_image_white = text_image_white(cv::Rect(offset, img.size()));
         img -= text_image_white;
