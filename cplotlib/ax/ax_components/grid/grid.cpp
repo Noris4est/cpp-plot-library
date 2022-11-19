@@ -78,7 +78,7 @@ namespace ax_components
 
         for (auto xtick : chartXticks)
         {
-            if(izerox != -1 && xtick != chartXticks[izerox])
+            if(izerox == -1 || izerox != -1 && xtick != chartXticks[izerox])
             {
                 p1 = {xtick, 0};
                 p2 = {xtick, chartFrame.rows};
@@ -87,7 +87,7 @@ namespace ax_components
         }
         for (auto ytick : chartYticks)
         {
-            if(izeroy != -1 && ytick != chartYticks[izeroy])
+            if(izeroy == -1 || izeroy != -1 && ytick != chartYticks[izeroy])
             {
                 p1 = {0, ytick};
                 p2 = {chartFrame.cols, ytick};
