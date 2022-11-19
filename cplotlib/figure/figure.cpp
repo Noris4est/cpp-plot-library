@@ -64,4 +64,16 @@ namespace cplt
         axesRect.height = round( (1 - offsetSettings.top - offsetSettings.bottom) * figsize->height);
         return axesRect;
     }
+
+    std::shared_ptr<FigBackground> Figure::getBackground()
+    {
+        needRefresh = true;
+        return figBackground;
+    }
+
+    std::shared_ptr<FigTitle> Figure::getTitle()
+    {
+        needRefresh = true;
+        return figTitle;
+    }
 }

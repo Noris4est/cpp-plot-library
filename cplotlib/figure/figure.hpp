@@ -22,6 +22,8 @@ namespace cplt
         std::shared_ptr<AxesManager> addSubplots(int nRows, int nCols);
         void show(const std::string &winName);
         void save(const std::string &path);
+        std::shared_ptr<FigBackground> getBackground();
+        std::shared_ptr<FigTitle> getTitle();
     private:
         cv::Rect getAxesRect();
         void refresh();
@@ -31,7 +33,7 @@ namespace cplt
         std::shared_ptr<FigTitle> figTitle;
         std::shared_ptr<AxesManager> axesManager = nullptr;
         std::shared_ptr<cv::Mat> frame;
-        bool needRefresh;
+        bool needRefresh = true;
     }; /// -- END Figure
 }
 
