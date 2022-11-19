@@ -28,6 +28,9 @@ namespace ax_components
         void setVisibility(bool flag);
         void setFontScale(double fontScale);
         void setFontColor(cv::Scalar fontColor);
+        void setNumDigitsAfterDotX(int nx);
+        void setNumDigitsAfterDotY(int ny);
+
     private:
         bool visibility;
         double fontScale;
@@ -37,7 +40,8 @@ namespace ax_components
         int lineThickness;//thisckness = 1
         cv::Point xtickOffset = {0, 5};
         cv::Point ytickOffset = {-5, 0};
-        int numDigitsAfterDot;
+        int numDigitsAfterDotX;
+        int numDigitsAfterDotY;
     };
 }
 

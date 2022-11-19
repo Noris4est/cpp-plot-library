@@ -16,7 +16,8 @@ namespace ax_components
         visibility = true;
         fontScale = 0.6;
         fontColor = colors::black;
-        numDigitsAfterDot = 1;
+        numDigitsAfterDotX = 1;
+        numDigitsAfterDotY = 1;
         fontFace = cv::FONT_HERSHEY_DUPLEX;//шрифт-тип (cv::FONT_HERSHEY_DUPLEX)
         lineType = cv::LINE_AA;//cv::LINE_AA
         lineThickness = 1;//thisckness = 1
@@ -46,7 +47,16 @@ namespace ax_components
         this->fontColor = fontColor;
         run_refresh_handlers();
     }
-
+    void Ticks::setNumDigitsAfterDotX(int nx)
+    {
+        assert(nx >= 0);
+        numDigitsAfterDotX = nx;
+    }
+    void Ticks::setNumDigitsAfterDotY(int ny)
+    {
+        assert(ny >= 0);
+        numDigitsAfterDotY = ny;
+    }
     void Ticks::draw()
     {
         cv::Rect chartRect = createChartRect();
@@ -71,7 +81,7 @@ namespace ax_components
             p1 = {chartRect.x + chartTick, chartRect.y + chartRect.height - xTickHeight/2};
             p2 = {chartRect.x + chartTick, chartRect.y + chartRect.height + xTickHeight/2};
             cv::line(*frame, p1, p2, fontColor);
-            stream << std::fixed << std::setprecision(numDigitsAfterDot) << tick;//одна цифра после запятой
+            stream << std::fixed << std::setprecision(numDigitsAfterDotX) << tick;//одна цифра после запятой
             s = stream.str();
             frameText::putText(
                 *frame, 
@@ -96,7 +106,7 @@ namespace ax_components
             p1 = {chartRect.x - yTickWidth/2, chartRect.y + chartTick};
             p2 = {chartRect.x + yTickWidth/2, chartRect.y + chartTick};
             cv::line(*frame, p1, p2, fontColor);
-            stream << std::fixed << std::setprecision(numDigitsAfterDot) << tick;
+            stream << std::fixed << std::setprecision(numDigitsAfterDotY) << tick;
             s = stream.str();
             frameText::putText(
                 *frame, 
